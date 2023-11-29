@@ -36,9 +36,9 @@ draw_background(background)  # Draws all background tiles on a copy of the scree
 menu = True
 while menu:
     menu = pygame.image.load("./assets/titlepage.jpg")
-    menu = pygame.transform.scale(menu, (800, 800))
+    menu = pygame.transform.scale(menu, (1025, 1025))
     SCREEN.fill((255, 255, 255))
-    SCREEN.blit(menu, ((SCREEN_WIDTH/2 - menu.get_width()/2), (SCREEN_HEIGHT/2 - menu.get_height()/2) + 70))
+    SCREEN.blit(menu, ((SCREEN_WIDTH/2 - menu.get_width()/2), (SCREEN_HEIGHT/2 - menu.get_height()/2) + 170))
     menu_text_1 = welcome_font.render('PRESS "SPACE" TO BEGIN', True, (220, 0, 0))
     menu_text_2 = welcome_font.render('EXIT THE WINDOW TO QUIT', True, (220, 0, 0))
     SCREEN.blit(menu_text_1, (SCREEN_WIDTH / 2 - menu_text_1.get_width() / 2,
@@ -52,10 +52,12 @@ while menu:
             sys.exit()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
+                pygame.mixer.Sound.play(power_up)
                 menu = False
 
 
 # Play music
+pygame.mixer.music.set_volume(.75)
 pygame.mixer.music.load("./sounds/subbase.mp3")
 pygame.mixer.music.queue("./sounds/whiskeyhoteltrim.mp3")
 pygame.mixer.music.play(0, 0, 0)
