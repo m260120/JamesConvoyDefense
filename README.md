@@ -24,3 +24,5 @@ To exit the game, click the window exit button at any time.
 - Time (2)
 - Font (1)
 - Music (2)
+- Menu Screen (3)
+- Key event (2)
