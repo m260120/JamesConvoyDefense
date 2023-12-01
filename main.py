@@ -314,7 +314,7 @@ while len(allies_alive) > 0:
     score_text = score_font.render(f"Score: {score}", True, (240, 0, 0))
     SCREEN.blit(score_text, (SCREEN_WIDTH - score_text.get_width() - 10, 0))
 
-    timer_text = score_font.render(f'Time: {222 - float(game_timer):.2f}', True, (240, 0, 0))
+    timer_text = score_font.render(f'Time: {228 - float(game_timer):.2f}', True, (240, 0, 0))
     SCREEN.blit(timer_text, (10, 0))
 
     level_text = score_font.render(f"Level: {level}", True, (240, 0, 0))
@@ -362,13 +362,13 @@ while len(allies_alive) > 0:
         JET2_SPEED = 17
         BOMBER_SPEED = 8
 
-    if 200 <= game_timer < 222:
+    if 200 <= game_timer < 228:
         level = 9
         JET1_SPEED = 13
         JET2_SPEED = 18
         BOMBER_SPEED = 9
 
-    if game_timer >= 222:
+    if game_timer >= 228:
         SCREEN.blit(background, (0, 0))
         endtext = score_font.render('The Convoy Survived. You Won.', True, (240, 0, 0))
         SCREEN.blit(endtext, (SCREEN_WIDTH / 2 - endtext.get_width() / 2,
